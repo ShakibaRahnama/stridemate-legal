@@ -27,6 +27,12 @@
 <p>When you sign up we collect your email address and the name you choose. If you sign in with Apple or Google, we receive the account identifier and the email address that service shares with us (for Apple, this can be a private relay address). We also store your preferences: activity type, interests, guide voice, and units.</p>
 <p>During setup we ask what you're hoping to use StrideMate for (for example, discovering new places or cheering on a runner). We keep the answer you first give, alongside how you go on to use the app, so we can understand what people come for and improve StrideMate. You can change your answer in Profile; your first answer is deleted with your account.</p>
 
+<h3>Your public profile</h3>
+<p>You choose a unique handle and a display name, and you can add a profile photo, a short bio, and a location. These, along with the month you joined, make up your public profile: anyone signed in to StrideMate can find you by your handle and see it. Only add what you're happy for others to see. Before we save a profile photo or profile text, we check it with OpenAI's moderation service to keep out content that isn't allowed (see section 3).</p>
+
+<h3>Reports and blocks</h3>
+<p>If you report a profile, we keep the report: the reason, any note you add, and a copy of the profile as it was (including its photo), so we can review it. The person isn't told who reported them. If you block someone, we keep that so you're hidden from each other. Reports may be kept after either account is deleted, for as long as needed to deal with them and to keep people using StrideMate safe.</p>
+
 <h3>Birthday and gender</h3>
 <p>When you sign up we ask for your date of birth, to make sure StrideMate is right for your age (see section 9). If you're under the minimum age, we don't keep the date you entered and we close the account you just made. You can also tell us your gender (woman, man, non-binary, your own description, or prefer not to say). This is optional.</p>
 <p>Apart from the age check, we use your birthday and gender only to understand who uses StrideMate, and only in groups of 20 or more people, by age range rather than exact date. They're never shown on your profile, shared with other users, or sent to AI services. Anything you write to describe your gender stays private to your account and is never included, even in those groups. You can change your birthday, or change or remove your gender, in Profile → About you.</p>
@@ -67,6 +73,7 @@
   <li>To send notifications you allow, such as reminders about things you saved or free journeys about to expire.</li>
   <li>To respond to you when you contact us, and to improve the app using feedback you give us and which recommendations people open.</li>
   <li>To find and fix crashes and errors.</li>
+  <li>To keep StrideMate safe: checking profile photos and text, reviewing reports, and applying blocks.</li>
   <li>To check that StrideMate is right for your age, and to understand who uses it, looking at age ranges and gender only in groups of 20 or more people.</li>
   <li>To keep the service fair and affordable, by counting how often each account uses our AI and mapping services and applying daily limits.</li>
 </ul>
@@ -79,6 +86,7 @@
   <tr><td>Supabase</td><td>Database, sign-in, file storage, and server functions</td><td>Your account and app data described above</td></tr>
   <tr><td>Anthropic (Claude)</td><td>Writes tour narration, recaps, and recommendations</td><td>Landmark names and locations near your starting point (so, your approximate location), your interests, chosen tone, and food and drink preferences, the neighbourhood, local time, and weather, the landmarks you visited, and the topics you explored. Never your name, email, or account details.</td></tr>
   <tr><td>OpenAI</td><td>Turns narration text into spoken audio</td><td>Narration text</td></tr>
+  <tr><td>OpenAI (moderation)</td><td>Checks profile photos and profile text for content that isn't allowed. Used for everyone with a profile, whether or not AI features are turned on, because public profiles must be screened</td><td>Your profile photo, display name, handle, bio, and location, when you add or change them. Used only for this check</td></tr>
   <tr><td>Google (Places)</td><td>Finds cafés and restaurants that are open along your route</td><td>Approximate coordinates of your route</td></tr>
   <tr><td>Wikipedia (Wikimedia)</td><td>Finds landmarks near your starting point</td><td>Approximate coordinates of your starting point</td></tr>
   <tr><td>Apple</td><td>Maps, walking directions, weather, sign-in, and payments</td><td>Coordinates for routing and weather; purchase and sign-in data as described above</td></tr>
@@ -109,7 +117,7 @@
   <li><strong>Access and portability.</strong> You can ask us for a copy of your data.</li>
 </ul>
 <p>Depending on where you live, you may have additional rights, such as to object to or restrict certain processing, or to complain to your local data protection authority (in Canada, the Office of the Privacy Commissioner of Canada). You can exercise your rights by emailing <a href="mailto:shakiba.rahnama97@gmail.com">shakiba.rahnama97@gmail.com</a>. We'll respond within the time the law requires and won't treat you differently for exercising your rights.</p>
-<p>Where the GDPR applies, we process your information to provide the service you asked for (contract), to keep StrideMate secure and improve it (legitimate interests), and, for location, microphone, camera, notifications, photo library access, and sending data to AI providers, with your consent, which you can withdraw in Settings or in the app. We use your date of birth to check your age (legal obligation and contract) and, in groups only, to understand who uses StrideMate (legitimate interests). If you choose to tell us your gender, we process it with your consent, which you can withdraw by removing it in Profile → About you.</p>
+<p>Where the GDPR applies, we process your information to provide the service you asked for (contract), to keep StrideMate secure and improve it, including checking profile content and handling reports (legitimate interests), and, for location, microphone, camera, notifications, photo library access, and sending data to AI providers, with your consent, which you can withdraw in Settings or in the app. We use your date of birth to check your age (legal obligation and contract) and, in groups only, to understand who uses StrideMate (legitimate interests). If you choose to tell us your gender, we process it with your consent, which you can withdraw by removing it in Profile → About you.</p>
 
 <h2>8. Security</h2>
 <p>Data is encrypted in transit, and access rules limit each account to its own data and to cheers shared with it. No system is perfectly secure, so please use a strong, unique password.</p>
