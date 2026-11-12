@@ -31,12 +31,18 @@
 <p>You choose a unique handle and a display name, and you can add a profile photo, a short bio, and a location. These, along with the month you joined, make up your public profile: anyone signed in to StrideMate can find you by your handle and see it. Only add what you're happy for others to see. Before we save a profile photo or profile text, we check it with OpenAI's moderation service to keep out content that isn't allowed (see section 3). If you're a StrideMate+ member, your profile shows a member badge, and founding members a crown.</p>
 <p>Your profile can also show your activity: your stats (such as journeys, landmarks visited, cities toured, distance, and estimated steps), your weekly streak, milestones, a 12-week activity chart, and your journal. Journal entries show their name, date, type, distance, city, a public note you can add, and their photos. Your private reflections, videos, and routes are never shown. These are shown to everyone by default. In Profile → Sharing you can choose who sees each one (everyone, your crew, or only you), make your whole profile private, and hide single journal entries. A private profile shows only your photo, name, handle, bio, location, member since, and badge. To show your stats, the app saves a summary of your totals to your account. Before anyone else sees a journal photo, we check it with OpenAI's moderation service.</p>
 
+<h3>Your crew</h3>
+<p>You can ask people to join your crew, and accept or decline their requests. We store who is in your crew and the requests between you. Crew members can see what you've set to "crew" in Sharing. Declining a request or removing someone isn't shown to them. If someone you declined asks again within 30 days, their request is held and not shown to you. Blocking someone removes them from your crew.</p>
+
+<h3>Sending to your crew</h3>
+<p>You can send a recommendation or a saved landmark to someone in your crew, with a note. We store what you sent, who you sent it to, your note, where the recommendation originally came from (including if it was passed on to you), and whether they added it to their Library. They see your name and note. Before a note is sent, we check it with OpenAI's moderation service. If you delete your account, what you've sent stays with the people you sent it to, with your name.</p>
+
 <h3>Reports and blocks</h3>
 <p>If you report a profile, we keep the report: the reason, any note you add, and a copy of the profile as it was (including its photo), so we can review it. The person isn't told who reported them. If you block someone, we keep that so you're hidden from each other. Reports may be kept after either account is deleted, for as long as needed to deal with them and to keep people using StrideMate safe.</p>
 
 <h3>Birthday and gender</h3>
 <p>When you sign up we ask for your date of birth, to make sure StrideMate is right for your age (see section 9). If you're under the minimum age, we don't keep the date you entered and we close the account you just made. You can also tell us your gender (woman, man, non-binary, your own description, or prefer not to say). This is optional.</p>
-<p>Apart from the age check, we use your birthday and gender only to understand who uses StrideMate, and only in groups of 20 or more people, by age range rather than exact date. They're never shown on your profile, shared with other users, or sent to AI services. Anything you write to describe your gender stays private to your account and is never included, even in those groups. You can change your birthday, or change or remove your gender, in Profile → About you.</p>
+<p>Apart from the age check, we use your birthday and gender to understand who uses StrideMate and which recommendations people pass on to each other. This can include looking at a person's age range and gender alongside what they send, receive, and save. They're never shown on your profile, shared with other users, or sent to AI services. Anything you write to describe your gender stays private to your account and is never used in this analysis. You can change your birthday, or change or remove your gender, in Profile → About you.</p>
 
 <h3>Location</h3>
 <p>StrideMate uses your device's precise location to:</p>
@@ -60,6 +66,9 @@
 <h3>Purchases</h3>
 <p>Payments are processed by Apple. We never see your card or payment details. We receive the transaction information Apple provides (such as the product, date, and a transaction identifier) and link it to your account so we can apply your subscription or credits. We keep a log of each purchase check (the transaction identifier, product, and result) so we can resolve any problem with a purchase.</p>
 
+<h3>Push notifications</h3>
+<p>If you allow notifications, we store a push token for your device, which Apple's push service uses to deliver notifications from us (for example, a crew request). Signing out removes your device's token from your account. You can turn crew notifications off in Profile → Notifications.</p>
+
 <h3>Crash and diagnostic reports</h3>
 <p>If StrideMate crashes, freezes, or something important fails (for example a journey that can't be created or a purchase error), the app sends us a technical report: what went wrong, the app and iOS version, and your device model. Crash reports come from Apple's built-in diagnostics and contain technical information about the app's code, not your content or location. Reports are linked to your account so we can help if you contact us, are visible only to us, and are deleted automatically after 90 days.</p>
 
@@ -71,11 +80,11 @@
   <li>To provide StrideMate: create journeys, narrate them, track activities, deliver cheers, and show your stats and journal.</li>
   <li>To personalise journeys to your interests, your food and drink preferences, the time of day, and the weather where you are.</li>
   <li>To manage your subscription, credits, and purchases, and to prevent fraud and abuse.</li>
-  <li>To send notifications you allow, such as reminders about things you saved or free journeys about to expire.</li>
+  <li>To send notifications you allow, such as crew requests, your monthly journeys, streak reminders, or reminders about things you saved.</li>
   <li>To respond to you when you contact us, and to improve the app using feedback you give us and which recommendations people open.</li>
   <li>To find and fix crashes and errors.</li>
   <li>To keep StrideMate safe: checking profile photos and text, reviewing reports, and applying blocks.</li>
-  <li>To check that StrideMate is right for your age, and to understand who uses it, looking at age ranges and gender only in groups of 20 or more people.</li>
+  <li>To check that StrideMate is right for your age, and to understand who uses it and how recommendations spread, using age range and gender.</li>
   <li>To keep the service fair and affordable, by counting how often each account uses our AI and mapping services and applying daily limits.</li>
 </ul>
 <p>We do not sell your personal information, share it for advertising, or use it to build advertising profiles.</p>
@@ -87,10 +96,10 @@
   <tr><td>Supabase</td><td>Database, sign-in, file storage, and server functions</td><td>Your account and app data described above</td></tr>
   <tr><td>Anthropic (Claude)</td><td>Writes tour narration, recaps, and recommendations</td><td>Landmark names and locations near your starting point (so, your approximate location), your interests, chosen tone, and food and drink preferences, the neighbourhood, local time, and weather, the landmarks you visited, and the topics you explored. Never your name, email, or account details.</td></tr>
   <tr><td>OpenAI</td><td>Turns narration text into spoken audio</td><td>Narration text</td></tr>
-  <tr><td>OpenAI (moderation)</td><td>Checks profile photos and profile text for content that isn't allowed. Used for everyone with a profile, whether or not AI features are turned on, because public profiles must be screened</td><td>Your profile photo, display name, handle, bio, and location, when you add or change them; public notes on journal entries; and journal photos before they're first shown to someone else. Used only for this check</td></tr>
+  <tr><td>OpenAI (moderation)</td><td>Checks profile photos and profile text for content that isn't allowed. Used for everyone with a profile, whether or not AI features are turned on, because public profiles must be screened</td><td>Your profile photo, display name, handle, bio, and location, when you add or change them; public notes on journal entries; notes you send to your crew; and journal photos before they're first shown to someone else. Used only for this check</td></tr>
   <tr><td>Google (Places)</td><td>Finds cafés and restaurants that are open along your route</td><td>Approximate coordinates of your route</td></tr>
   <tr><td>Wikipedia (Wikimedia)</td><td>Finds landmarks near your starting point</td><td>Approximate coordinates of your starting point</td></tr>
-  <tr><td>Apple</td><td>Maps, walking directions, weather, sign-in, and payments</td><td>Coordinates for routing and weather; purchase and sign-in data as described above</td></tr>
+  <tr><td>Apple</td><td>Maps, walking directions, weather, sign-in, payments, and push notifications</td><td>Coordinates for routing and weather; purchase and sign-in data as described above; your device's push token and the notification text</td></tr>
   <tr><td>Google (Sign-In)</td><td>Sign in with Google, if you choose it</td><td>Standard sign-in information</td></tr>
   <tr><td>Apple Podcasts and Apple Music catalogs, YouTube, Open Library, Wikidata</td><td>Find real media to recommend after a walk</td><td>Search phrases about the topics of your walk (for example "Victor Horta Art Nouveau"). No account or location information.</td></tr>
 </table>
@@ -118,7 +127,7 @@
   <li><strong>Access and portability.</strong> You can ask us for a copy of your data.</li>
 </ul>
 <p>Depending on where you live, you may have additional rights, such as to object to or restrict certain processing, or to complain to your local data protection authority (in Canada, the Office of the Privacy Commissioner of Canada). You can exercise your rights by emailing <a href="mailto:shakiba.rahnama97@gmail.com">shakiba.rahnama97@gmail.com</a>. We'll respond within the time the law requires and won't treat you differently for exercising your rights.</p>
-<p>Where the GDPR applies, we process your information to provide the service you asked for (contract), to keep StrideMate secure and improve it, including checking profile content and handling reports (legitimate interests), and, for location, microphone, camera, notifications, photo library access, and sending data to AI providers, with your consent, which you can withdraw in Settings or in the app. We use your date of birth to check your age (legal obligation and contract) and, in groups only, to understand who uses StrideMate (legitimate interests). If you choose to tell us your gender, we process it with your consent, which you can withdraw by removing it in Profile → About you.</p>
+<p>Where the GDPR applies, we process your information to provide the service you asked for (contract), to keep StrideMate secure and improve it, including checking profile content and handling reports (legitimate interests), and, for location, microphone, camera, notifications, photo library access, and sending data to AI providers, with your consent, which you can withdraw in Settings or in the app. We use your date of birth to check your age (legal obligation and contract) and to understand who uses StrideMate and how recommendations spread (legitimate interests). If you choose to tell us your gender, we process it with your consent, which you can withdraw by removing it in Profile → About you.</p>
 
 <h2>8. Security</h2>
 <p>Data is encrypted in transit, and access rules limit each account to its own data and to cheers shared with it. No system is perfectly secure, so please use a strong, unique password.</p>
